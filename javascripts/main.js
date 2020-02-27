@@ -1,1 +1,7 @@
-console.log("Hello bears and salmon!");
+import bearForm from './components/bearForm.js';
+
+const init = () => {
+    bearForm.bearFormBuilder();
+};
+
+init();
