@@ -11,24 +11,36 @@ const buildBearSleuth = () => {
             domString += '<div class="card-body">';
                 domString += `<h5 class="card-title">${allBears[i].name}</h5>`;
                 domString += `<button type="button" class="btn btn-outline-warning bear-tried-button">Tried to...</button>`;
-            domString += '</div>';
+                domString += `<button type="button" class="btn btn-outline-success bear-caught-fish-button">Got it!!!</button>`
+                domString += '</div>';
         domString += '</div>';
     }
     domString += '</div>';
     util.printToDom('bear-container', domString);
-    bearActivityFailureEvent();
+    bearFailureEvent();
+    bearSuccessEvent();
 };
 
 const trackFailure = (e) => {
     console.log('tried but failed miserably...');
 };
 
-const bearActivityFailureEvent = () => {
+const trackSuccess = (e) => {
+    console.log('It got the fish! Yeah!');
+};
+
+const bearFailureEvent = () => {
     const triedButtons = document.getElementsByClassName('bear-tried-button');
     for(let i = 0; i < triedButtons.length; i++){
       triedButtons[i].addEventListener('click', trackFailure);
     }
   };
 
+  const bearSuccessEvent = () => {
+    const gotItButtons = document.getElementsByClassName('bear-caught-fish-button');
+    for(let i = 0; i < gotItButtons.length; i++){
+      gotItButtons[i].addEventListener('click', trackSuccess);
+    }
+  };
 
 export default { buildBearSleuth };
