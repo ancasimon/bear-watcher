@@ -1,24 +1,10 @@
 // import bearData from '../helpers/data/bearData.js';
 import util from '../helpers/util.js';
 import river from './river.js';
-
-const trackedBears = [];
-
-const buildNewBear = (e) => {
-    e.preventDefault();
-    const newBearObject =   {
-      id: `bear${trackedBears.length + 1}`,
-      name: document.getElementById('bearName').value,
-      imageUrl: document.getElementById('bearPhoto').value
-    };
-    trackedBears.push(newBearObject);
-    console.log(trackedBears);
-    document.getElementById('bear-form-fields').reset();
-    river.buildBearSleuth();
-  };
+import bearData from '../helpers/data/bearData.js';
 
 const buildBearForm = () => {
-    let domString = '';
+    let domString = `<h2>What did you see?</h2>`;
     domString += '<form id="bear-form-fields" class="row mx-5 my-5">';
         domString += '<div class="form-group col-6">';
             domString += `<label for="bearName">Bear Name</label>`;
@@ -33,7 +19,7 @@ const buildBearForm = () => {
         domString += '</div>';
     domString += '</form>';
     util.printToDom('bear-form', domString);
-    document.getElementById('bearSubmitButton').addEventListener('click', buildNewBear);
+    document.getElementById('bearSubmitButton').addEventListener('click', bearData.buildNewBear);
 };
 
 export default { buildBearForm };
