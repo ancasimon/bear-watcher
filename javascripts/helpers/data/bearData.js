@@ -82,7 +82,7 @@ const buildBearActivityTable = (activities) => {
 
 
 const trackFailure = (e) => {
-  const bearId = e.target.id;
+  const bearId = e.target.closest('.card').id;
   console.log(bearId);
   const bearPosition = trackedBears.findIndex((currentBear) => currentBear.id === bearId);
   console.log(trackedBears[bearPosition]);
@@ -102,7 +102,7 @@ const trackFailure = (e) => {
 };
   
 const trackSuccess = (e) => {
-  const successBearId = e.target.id;
+  const successBearId = e.target.closest('.card').id;
   console.log(successBearId);
   const successBearPosition = trackedBears.findIndex((currentBear) => currentBear.id === successBearId);
   // console.log(trackedBears[successBearPosition]);
