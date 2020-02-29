@@ -85,8 +85,8 @@ const buildBearSleuth = () => {
     let domString = `<h2>Our Sleuth of Bears</h2>`;
     domString += '<div class="d-flex flex-wrap">';
     for (let i = 0; i < allBears.length; i++) {
-        domString += `<div class="card" id=${allBears[i].id}>`;
-            domString += `<img src="${allBears[i].imageUrl}" class="card-img-top" alt="bear-photo">`;
+        domString += `<div class="card bg-light mb-3 mx-3 col-4" id=${allBears[i].id}>`;
+            domString += `<img src="${allBears[i].imageUrl}" class="card-img-top img-fluid img-thumbnail alt="bear-photo">`;
             domString += '<div class="card-body">';
                 domString += `<h5 class="card-title">${allBears[i].name}</h5>`;
                 domString += `<button type="button" class="btn btn-outline-warning bear-tried-button">Tried to...</button>`;
