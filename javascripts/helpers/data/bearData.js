@@ -35,124 +35,15 @@ const trackedBears = [
     }
 ];
 
-const buildBearActivityTable = (activities) => {
-  let domString = '';
-  if (activities.length > 0) { 
-    domString += '<table class="table">';
-    domString += '<thead>';
-    domString += '<tr>';
-    domString += `<th scope="col">Date & Time</th>`;
-    domString += `<th scope="col">Result</th>`;
-    domString += '</tr>';
-    domString += '</thead>';
-    domString += '<tbody>';
-    for (let i=0; i < activities.length; i++) {
-      domString += '<tr>';
-      domString += `<td>${moment(activities[i].timestamp).format('MMMM Do YYYY, h:mm:ss a')}</td>`;
-      domString += `<td>${activities[i].type}</td>`;
-      domString += '</tr>';
-    }
-    domString += '</tbody>';
-    domString += '</table>';
-  }
-  return domString;
-};
-
-// const addBearActivity = (e) => {
-//   const bearId = e.target.id;
-//   console.log(bearId);
-//   const bearPosition = trackedBears.findIndex((currentBear) => currentBear.id === bearId);
-//   console.log(trackedBears[bearPosition]);
-//   const activities = [];
-//   trackedBears[bearPosition].activities.push(newActivity);
-//   console.log(trackedBears[bearPosition].activities);
-//   buildBearActivityTable(trackedBears[bearPosition].activities);
-//   river.buildBearSleuth();
-// };
-
-// const trackFailure = (e) => {
-//     let timestamp = '';
-//     let type = '';
-//     let newActivity = {
-//         timestamp: Date.now(),
-//         type: "Failure"
-//       };
-//   addBearActivity();
-//     };
-
-
-const trackFailure = (e) => {
-  const bearId = e.target.closest('.card').id;
-  console.log(bearId);
-  const bearPosition = trackedBears.findIndex((currentBear) => currentBear.id === bearId);
-  console.log(trackedBears[bearPosition]);
-  let timestamp = '';
-  let type = '';
-  let newActivity = {
-      timestamp: Date.now(),
-      type: "Failure"
-    };
-  // console.log(newActivity);
-  const activities = [];
-  trackedBears[bearPosition].activities.push(newActivity);
-  console.log(trackedBears[bearPosition].activities);
-  buildBearActivityTable(trackedBears[bearPosition].activities);
-  console.log('Tried but failed miserably...');
-  river.buildBearSleuth();
-};
-  
-const trackSuccess = (e) => {
-  const successBearId = e.target.closest('.card').id;
-  console.log(successBearId);
-  const successBearPosition = trackedBears.findIndex((currentBear) => currentBear.id === successBearId);
-  // console.log(trackedBears[successBearPosition]);
-  let timestamp = '';
-  let type = '';
-  let newActivity = {
-      timestamp: Date.now(),
-      type: "Success"
-    };
-  console.log(newActivity);
-  // const activities = [];
-  trackedBears[successBearPosition].activities.push(newActivity);
-  console.log(trackedBears[successBearPosition].activities);
-  buildBearActivityTable(trackedBears[successBearPosition].activities);
-  console.log('It got a fish!! Yeah!!');
-  river.buildBearSleuth();
-};
-  
-const bearFailureEvent = () => {
-    const triedButtons = document.getElementsByClassName('bear-tried-button');
-    for(let i = 0; i < triedButtons.length; i++){
-      triedButtons[i].addEventListener('click', trackFailure);
-    }
-  };
-  
-const bearSuccessEvent = () => {
-  const gotItButtons = document.getElementsByClassName('bear-caught-fish-button');
-  for(let i = 0; i < gotItButtons.length; i++){
-    gotItButtons[i].addEventListener('click', trackSuccess);
-  }
-};
-  
 const getBears = () => {
   return trackedBears;
   console.log("tracked bears", trackedBears);
 };
 
-const buildNewBear = (e) => {
-  e.preventDefault();
-  const newBearObject =   {
-    id: `bear${trackedBears.length + 1}`,
-    name: document.getElementById('bearName').value,
-    imageUrl: document.getElementById('bearPhoto').value,
-    activities: []
-  };
+const addBear = (newBearObject) => {
   trackedBears.push(newBearObject);
-  console.log(trackedBears);
-  document.getElementById('bear-form-fields').reset();
-  river.buildBearSleuth(trackedBears);
 };
+
 
 //   QUESTION: DO we need the setNewBear function?? where would we use the setNewBear???? is it needed to prevent anyone changing bear data??
 //   const setNewBear = () => {
@@ -160,4 +51,4 @@ const buildNewBear = (e) => {
 //       console.log('here is our latest find', newTrackedBear);
 //   };
 
-export default { buildNewBear, getBears, buildBearActivityTable, bearFailureEvent, bearSuccessEvent };
+export default { getBears, addBear };
