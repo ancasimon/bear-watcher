@@ -23,7 +23,8 @@ const buildNewBear = (e) => {
 const buildBearForm = () => {
     let domString = '<div class="main-body">';
     domString += `<h2>What did you see?</h2>`;
-    domString += '<form id="bear-form-fields" class="row mx-5 my-5">';
+    domString += '<form id="bear-form-fields" class="mx-5 my-5">';
+    domString += '<div class="row">';
         domString += '<div class="form-group col-6">';
             domString += `<label for="bearName">Bear Name</label>`;
             domString += `<input type="text" class="form-control" id="bearName" placeholder="Enter the bear's name.">`;
@@ -31,6 +32,7 @@ const buildBearForm = () => {
         domString += '<div class="form-group col-6">';
             domString += `<label for="bearPhoto">Bear Photo</label>`;
             domString += `<input type="text" class="form-control" id="bearPhoto" placeholder="Enter the url for the bear's photo.">`;
+        domString += '</div>';
         domString += '</div>';
         domString += '<div class="row">';
             domString += `<button id="bearSubmitButton" type="button" class="btn btn-dark">Submit</button>`;
