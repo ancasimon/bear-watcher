@@ -16,7 +16,8 @@ const trackedBears = [
             timestamp: "02/01/2020",
             type: "Success"
           }
-        ]
+        ],
+        fishCount: 1
     },
     {
         id: 'bear2',
@@ -31,7 +32,8 @@ const trackedBears = [
             timestamp: "02/01/2020",
             type: "Success"
           }
-        ]
+        ], 
+        fishCount: 1
     }
 ];
 

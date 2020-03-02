@@ -1,10 +1,16 @@
 body {
     background-color: lightskyblue;
+    padding: 3em;
 }
 
-img {
+.card {
+    width: 25%;
+}
+
+.image {
     display: block;
-    width: auto;
-    height: 50px; 
+    width: 300px;
     border: 10px solid darkgray;
+    align-self: center;
+    margin-top: 1em;
     }

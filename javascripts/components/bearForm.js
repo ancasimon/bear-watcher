@@ -10,7 +10,8 @@ const buildNewBear = (e) => {
       id: `bear${allBears.length + 1}`,
       name: document.getElementById('bearName').value,
       imageUrl: document.getElementById('bearPhoto').value,
-      activities: []
+      activities: [],
+      fishCount: 0
     };
     bearData.addBear(newBearObject);
     console.log(allBears);
@@ -20,7 +21,8 @@ const buildNewBear = (e) => {
   
 
 const buildBearForm = () => {
-    let domString = `<h2>What did you see?</h2>`;
+    let domString = '<div class="main-body">';
+    domString += `<h2>What did you see?</h2>`;
     domString += '<form id="bear-form-fields" class="row mx-5 my-5">';
         domString += '<div class="form-group col-6">';
             domString += `<label for="bearName">Bear Name</label>`;
@@ -34,6 +36,7 @@ const buildBearForm = () => {
             domString += `<button id="bearSubmitButton" type="button" class="btn btn-dark">Submit</button>`;
         domString += '</div>';
     domString += '</form>';
+    domString += '</div>';
     util.printToDom('bear-form', domString);
     document.getElementById('bearSubmitButton').addEventListener('click', buildNewBear);
 };
