@@ -3,7 +3,7 @@ body {
     padding: 3em;
 }
 
-.card {
+.bear-card {
     width: 25%;
 }
 
@@ -14,3 +14,15 @@ body {
     align-self: center;
     margin-top: 1em;
     }
+
+.gold {
+    background-color: goldenrod;
+}
+
+.silver {
+    background-color: silver;
+}
+
+.bronze {
+    background-color: slategrey;
+}
