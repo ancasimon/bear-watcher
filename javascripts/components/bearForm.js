@@ -3,21 +3,29 @@ import util from '../helpers/util.js';
 import river from './river.js';
 import bearData from '../helpers/data/bearData.js';
 
+const alertTextValidation = () => {
+    $('#validationTextInput').modal('show');
+  };
+
 const buildNewBear = (e) => {
     const allBears = bearData.getBears();
     e.preventDefault();
-    const newBearObject =   {
-      id: `bear${allBears.length + 1}`,
-      name: document.getElementById('bearName').value,
-      imageUrl: document.getElementById('bearPhoto').value,
-      activities: [],
-      fishCount: 0
+    if (document.getElementById('bearName').value === '') {
+        alertTextValidation();
+      } else {
+        const newBearObject =   {
+            id: `bear${allBears.length + 1}`,
+            name: document.getElementById('bearName').value,
+            imageUrl: document.getElementById('bearPhoto').value,
+            activities: [],
+            fishCount: 0
+        };
+        bearData.addBear(newBearObject);
+        console.log(allBears);
+        document.getElementById('bear-form-fields').reset();
+        river.buildBearSleuth(allBears);
+        }
     };
-    bearData.addBear(newBearObject);
-    console.log(allBears);
-    document.getElementById('bear-form-fields').reset();
-    river.buildBearSleuth(allBears);
-  };
   
 
 const buildBearForm = () => {
@@ -42,5 +50,5 @@ const buildBearForm = () => {
     util.printToDom('bear-form', domString);
     document.getElementById('bearSubmitButton').addEventListener('click', buildNewBear);
 };
-
+  
 export default { buildNewBear, buildBearForm };
