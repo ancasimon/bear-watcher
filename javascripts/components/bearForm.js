@@ -1,4 +1,5 @@
 // import bearData from '../helpers/data/bearData.js';
+import awards from './awards.js';
 import util from '../helpers/util.js';
 import river from './river.js';
 import bearData from '../helpers/data/bearData.js';
@@ -21,15 +22,16 @@ const buildNewBear = (e) => {
             fishCount: 0
         };
         bearData.addBear(newBearObject);
+        bearData.setBearsSortedList();
+        awards.buildAwards();
         console.log(allBears);
         document.getElementById('bear-form-fields').reset();
         river.buildBearSleuth(allBears);
         }
     };
-  
 
 const buildBearForm = () => {
-    let domString = '<div class="main-body">';
+    let domString = '<div class="shadow-lg p-4 mb-5 bg-white rounded">';
     domString += `<h2>What did you see?</h2>`;
     domString += '<form id="bear-form-fields" class="mx-5 my-5">';
     domString += '<div class="row">';
@@ -39,7 +41,7 @@ const buildBearForm = () => {
         domString += '</div>';
         domString += '<div class="form-group col-6">';
             domString += `<label for="bearPhoto">Bear Photo</label>`;
-            domString += `<input type="text" class="form-control" id="bearPhoto" placeholder="Enter the url for the bear's photo.">`;
+            domString += `<input type="text" class="form-control" id="bearPhoto" placeholder="Enter a url for the bear's photo.">`;
         domString += '</div>';
         domString += '</div>';
         domString += '<div class="row">';

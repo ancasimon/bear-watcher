@@ -3,13 +3,10 @@ body {
     padding: 3em;
 }
 
-.bear-card {
-    width: 25%;
-}
-
 .image {
     display: block;
-    width: 300px;
+    width: auto;
+    height: 200px;
     border: 10px solid darkgray;
     align-self: center;
     margin-top: 1em;
