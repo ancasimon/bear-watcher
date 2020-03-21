@@ -1,10 +1,17 @@
 # Bear-Watcher Site
 
 ## Description
-This site is an exploration into using ES6 modules. It is a site that scientists and park rangers can use to track brown bear feeding behavior, with their failures and successes, during salmon season in July and August. 
+This site is an exploration into using ES6 modules. It allows scientists and park rangers to track brown bear feeding behavior during salmon season in July and August, keep a record of the bears' attempts and succeses catching fish, and quickly identify the winners. 
+
+## Feature List
+1. Users can track a new bear by quickly adding a name and photo. The name is required, and a user's entry is validated accordingly.
+1. Users can record if a bear on the list has attempted to catch a fish (and failed) or if he/she actually succeeded. 
+1. Users can see the details of each bear's activity, including a tally of their total catches and a list of attempts and succeses with timestamps. 
+1. The site instantly calculates the top 3 winners and displays their names and photos for the user's review. 
+
 
 ## Screenshot
-![Home Page](./bear-watcher-screenshots/bear-watcher-home-page.png)
+![Home Page](./bear-watcher-screenshots/home.png)
 
 
 

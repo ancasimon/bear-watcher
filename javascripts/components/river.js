@@ -1,4 +1,5 @@
 import util from '../helpers/util.js';
+import awards from './awards.js';
 import bearData from '../helpers/data/bearData.js';
 
 const buildBearActivityTable = (activities) => {
@@ -64,6 +65,7 @@ const buildBearActivityTable = (activities) => {
     buildBearActivityTable(allBears[successBearPosition].activities);
     allBears[successBearPosition].fishCount += 1;
     console.log('It got a fish!! Yeah!!');
+    awards.buildAwards();
     buildBearSleuth();
   };
     
@@ -86,18 +88,20 @@ const buildBearSleuth = () => {
     let domString = `<h2>Our Sleuth of Bears</h2>`;
     domString += '<div class="d-flex flex-wrap">';
     for (let i = 0; i < allBears.length; i++) {
-        domString += `<div class="card bg-light col-4 m-2 bear-card" id=${allBears[i].id}>`;
-            domString += `<img src="${allBears[i].imageUrl}" class="card-img-top img-fluid img-thumbnail image" alt="bear-photo">`;
-            domString += '<div class="card-body">';
-                domString += `<h5 class="card-title">${allBears[i].name}</h5>`;
-                domString += `<h4>Got ${allBears[i].fishCount}</h4>`;
-                domString += `<button type="button" class="btn btn-outline-warning bear-tried-button mx-3">Tried to...</button>`;
-                domString += `<button type="button" class="btn btn-outline-success bear-caught-fish-button mx-3">Got it!!!</button>`;
-                domString += '<table class="table">';
-                domString += buildBearActivityTable(allBears[i].activities);
-                domString += '</table>';
-              domString += '</div>';
+      domString += '<div class="col-md-4 mb-2">';  
+        domString += `<div class="card bg-light bear-card shadow-lg p-3 mb-5 bg-white rounded" id=${allBears[i].id}>`;
+          domString += `<img src="${allBears[i].imageUrl}" class="card-img-top img-fluid img-thumbnail image" alt="bear-photo">`;
+          domString += '<div class="card-body">';
+            domString += `<h5 class="card-title">${allBears[i].name}</h5>`;
+            domString += `<h4>Got ${allBears[i].fishCount}</h4>`;
+            domString += `<button type="button" class="btn btn-outline-warning bear-tried-button mx-3">Tried to...</button>`;
+            domString += `<button type="button" class="btn btn-outline-success bear-caught-fish-button mx-3">Got it!!!</button>`;
+            domString += '<table class="table">';
+            domString += buildBearActivityTable(allBears[i].activities);
+            domString += '</table>';
+          domString += '</div>';
         domString += '</div>';
+      domString += '</div>';
     }
     domString += '</div>';
     util.printToDom('bear-container', domString);

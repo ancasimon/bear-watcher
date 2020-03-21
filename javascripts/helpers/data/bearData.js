@@ -77,7 +77,7 @@ const trackedBears = [
         type: "Failure"
       },
       {
-        timestamp: "02/111/2020",
+        timestamp: "02/11/2020",
         type: "Failure"
       }
     ], 
