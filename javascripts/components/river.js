@@ -86,6 +86,7 @@ const buildBearActivityTable = (activities) => {
 const buildBearSleuth = () => {
     const allBears = bearData.getBears();
     let domString = `<h2>Our Sleuth of Bears</h2>`;
+    domString += '<hr></hr>';
     domString += '<div class="d-flex flex-wrap">';
     for (let i = 0; i < allBears.length; i++) {
       domString += '<div class="col-md-4 mb-2">';  
