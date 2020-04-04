@@ -6,7 +6,7 @@ const trackedBears = [
     {
         id: 'bear1',
         name: 'Noah',
-        imageUrl: '../../../bear-watcher-screenshots/brown-bear-4.jpeg',
+        imageUrl: '../../../images/brown-bear-4.jpeg',
         activities: [
           {
             timestamp: "01/01/2020",
@@ -22,7 +22,7 @@ const trackedBears = [
     {
         id: 'bear2',
         name: 'Janie',
-        imageUrl: '../../../bear-watcher-screenshots/brown-bear-6.jpeg',
+        imageUrl: '../../../images/brown-bear-6.jpeg',
         activities: [
           {
             timestamp: "01/01/2020",
@@ -38,7 +38,7 @@ const trackedBears = [
     {
       id: 'bear3',
       name: 'John',
-      imageUrl: '../../../bear-watcher-screenshots/brown-bear-0.jpeg',
+      imageUrl: '../../../images/brown-bear-0.jpeg',
       activities: [
         {
           timestamp: "02/14/2020",
@@ -54,7 +54,7 @@ const trackedBears = [
   {
     id: 'bear4',
     name: 'Simba',
-    imageUrl: '../../../bear-watcher-screenshots/brown-bear-cub.jpeg',
+    imageUrl: '../../../images/brown-bear-cub.jpeg',
     activities: [
       {
         timestamp: "02/10/2020",
@@ -70,7 +70,7 @@ const trackedBears = [
   {
     id: 'bear5',
     name: 'Emma',
-    imageUrl: '../../../bear-watcher-screenshots/brown-bear-1.jpeg',
+    imageUrl: '../../../images/brown-bear-1.jpeg',
     activities: [
       {
         timestamp: "02/10/2020",
@@ -86,7 +86,7 @@ const trackedBears = [
   {
     id: 'bear6',
     name: 'William',
-    imageUrl: '../../../bear-watcher-screenshots/brown-bear-5.jpeg',
+    imageUrl: '../../../images/brown-bear-5.jpeg',
     activities: [
     ], 
     fishCount: 0
@@ -94,7 +94,7 @@ const trackedBears = [
   {
     id: 'bear7',
     name: 'Isabella',
-    imageUrl: '../../../bear-watcher-screenshots/brown-bear-2.jpeg',
+    imageUrl: '../../../images/brown-bear-2.jpeg',
     activities: [
     ], 
     fishCount: 0
