@@ -110,15 +110,4 @@ const addBear = (newBearObject) => {
   trackedBears.push(newBearObject);
 };
 
-const setBearsSortedList = () => {
-  // return trackedBears.sort(trackedBears.fishCount);
-  return trackedBears.sort((a, b) => (b.fishCount - a.fishCount));
-};
-
-//   QUESTION: DO we need the setNewBear function?? where would we use the setNewBear???? is it needed to prevent anyone changing bear data??
-//   const setNewBear = () => {
-//       newTrackedBear = newBearObject;
-//       console.log('here is our latest find', newTrackedBear);
-//   };
-
-export default { getBears, addBear, setBearsSortedList };
+export default { getBears, addBear };
