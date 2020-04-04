@@ -1,4 +1,3 @@
-// import bearData from '../helpers/data/bearData.js';
 import awards from './awards.js';
 import util from '../helpers/util.js';
 import river from './river.js';
@@ -22,9 +21,7 @@ const buildNewBear = (e) => {
             fishCount: 0
         };
         bearData.addBear(newBearObject);
-        bearData.setBearsSortedList();
         awards.buildAwards();
-        console.log(allBears);
         document.getElementById('bear-form-fields').reset();
         river.buildBearSleuth(allBears);
         }

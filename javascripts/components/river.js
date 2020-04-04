@@ -28,43 +28,32 @@ const buildBearActivityTable = (activities) => {
   const trackFailure = (e) => {
     const allBears = bearData.getBears();
     const bearId = e.target.closest('.card').id;
-    console.log(bearId);
     const bearPosition = allBears.findIndex((currentBear) => currentBear.id === bearId);
-    console.log(allBears[bearPosition]);
     let timestamp = '';
     let type = '';
     let newActivity = {
         timestamp: Date.now(),
         type: "Failure"
       };
-    // console.log(newActivity);
     const activities = [];
     allBears[bearPosition].activities.push(newActivity);
-    console.log(allBears[bearPosition].activities);
     buildBearActivityTable(allBears[bearPosition].activities);
-    console.log('Tried but failed miserably...');
     buildBearSleuth();
   };
     
   const trackSuccess = (e) => {
     const allBears = bearData.getBears();
     const successBearId = e.target.closest('.card').id;
-    console.log(successBearId);
     const successBearPosition = allBears.findIndex((currentBear) => currentBear.id === successBearId);
-    // console.log(trackedBears[successBearPosition]);
     let timestamp = '';
     let type = '';
     let newActivity = {
         timestamp: Date.now(),
         type: "Success"
       };
-    console.log(newActivity);
-    // const activities = [];
     allBears[successBearPosition].activities.push(newActivity);
-    console.log(allBears[successBearPosition].activities);
     buildBearActivityTable(allBears[successBearPosition].activities);
     allBears[successBearPosition].fishCount += 1;
-    console.log('It got a fish!! Yeah!!');
     awards.buildAwards();
     buildBearSleuth();
   };

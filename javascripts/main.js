@@ -7,7 +7,6 @@ const init = () => {
     bearForm.buildBearForm();
     river.buildBearSleuth();
     awards.buildAwards();
-    console.log(bearData.setBearsSortedList());
 };
 
 init();
