@@ -11,7 +11,7 @@ This project is an exploration into using ES6 modules. It allows park rangers in
 * We also started writing getter and setter methods for retrieving and updating data in the data file. 
 * Some of my hikes along the years have allowed me glimpses of these massive and gorgeous carnivores. No, I will not get out of my car and take a picture even at some distance in front of a black bear at Cades Cove in the Smokies, and, yes, I will sing at the top of my lungs and put bells on my backpack as I hike through Glacier National Park. Like with all wildlife, I love enjoying bears from a distance. And that's why I also particularly enjoyed working on this assignment and staring at these pictures for hours as I was figuring out various nuances of the site. I mean - wouldn't you want to be out there? Me, too. Just ... on the opposite side of the mountain, checking them out through binoculars!
 
-## Technologies & Tools
+## Tools & Technologies 
 Bootstrap, CSS, ES6 Modules (for organizing  files based on purpose and content), Github (for version control), HTML5, JavaScript, jQuery
 
 ## Feature List
